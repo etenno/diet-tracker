@@ -1,0 +1,13 @@
+<div>
+  <h1><%= @meal.name %></h1>
+</div>
+
+<div>
+
+  <div>
+    <h3></h3>
+    <% @meal.ingredients.each do |ingredient| %>
+      <div><%= ingredient.name %></div>
+    <% end %>
+  </div>
+</div>
