@@ -7,7 +7,9 @@
   <div>
     <h3></h3>
     <% @meal.ingredients.each do |ingredient| %>
-      <div><%= ingredient.name %></div>
+      <div><%= ingredient.description %></div>
     <% end %>
   </div>
 </div>
+
+<%= link_to "add an ingredient", new_meal_ingredient_path(@meal) %>

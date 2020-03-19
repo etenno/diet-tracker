@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'meals#index'
 
-  resources :meals
+  resources :meals do
+    resources :ingredients
+  end
 end
