@@ -5,9 +5,10 @@
 <div>
 
   <div>
-    <h3></h3>
+    <h3>FOOD   Description   Emissions</h3>
     <% @meal.ingredients.each do |ingredient| %>
-      <div><%= ingredient.description %></div>
+      <div><%= Food.find(ingredient.food_id).name %>  <%= ingredient.description %>   <%= Food.find(ingredient.food_id).emission_rate %> </div>
+
     <% end %>
   </div>
 </div>
