@@ -30,6 +30,18 @@ Food.create(name: 'Milk (2%)', emission_rate: '1.9', average_portion_size: "0.3"
 Food.create(name: 'Tomatoes', emission_rate: '1.1', average_portion_size: "0.3")
 Food.create(name: 'Lentils', emission_rate: '0.9', average_portion_size: "0.3")
 
+# emissions for food model represents the kg of co2 released by 1 kg of food
+
+# Food emissions data retrieved from the following url:
+# https://www.ewg.org/meateatersguide/a-meat-eaters-guide-to-climate-change-health-what-you-eat-matters/climate-and-environmental-impacts/
+
+Transport.create(name: 'Car', emissions: '0.267') # from carbon independent (originally 0.43 per mile)
+Transport.create(name: 'Train', emissions: '0.02') # emissions per person per km
+Transport.create(name: 'Flight (Domestic)', emissions: '0.316')
+Transport.create(name: 'Flight (Short Haul)', emissions: '0.260')
+Transport.create(name: 'Flight (Long Haul)', emissions: '0.21')
+# emissions for transport model represent the kg of co2 released by travelling 1 km
+
 Meal.create(name: 'sdf')
 Meal.create(name: 'sdf1')
 Meal.create(name: 'sd2f')

@@ -1,16 +1,36 @@
-<div>
-  <h1><%= @meal.name %></h1>
-</div>
-
-<div>
+<div class="main-container">
+  <div class="header">
+    <h1><%= @meal.name %></h1>
+  </div>
 
   <div>
-    <h3>FOOD   Description   Emissions</h3>
+    <% emission_total = 0 %>
     <% @meal.ingredients.each do |ingredient| %>
-      <div><%= Food.find(ingredient.food_id).name %>  <%= ingredient.description %>   <%= Food.find(ingredient.food_id).emission_rate %> </div>
-
+      <% emission_total+= Food.find(ingredient.food_id).emission_rate %>
     <% end %>
-  </div>
-</div>
 
-<%= link_to "add an ingredient", new_meal_ingredient_path(@meal) %>
+    <div class="meal-rating">
+      <h4>This meal results in the emission of around</h4>
+      <h2><%= emission_total %> kg</h2>
+      <h4>of CO2 into the atmosphere</h4>
+    </div>
+
+    <table>
+      <tr>
+        <th><p>Ingredient</p></th>
+        <th><p>Description</p></th>
+        <th><p>Emissions*</p></th>
+      </tr>
+      <% @meal.ingredients.each do |ingredient| %>
+        <tr>
+          <td><p><%= Food.find(ingredient.food_id).name %></p></td>
+          <td><p><%= ingredient.description %></p></td>
+          <td><p><%= Food.find(ingredient.food_id).emission_rate %></p> </td>
+        </tr>
+      <% end %>
+    </table>
+    <p>* = kg of CO2 emitted per kg of ingredient produced</p>
+  </div>
+
+  <%= link_to "Add an ingredient", new_meal_ingredient_path(@meal) %>
+</div>

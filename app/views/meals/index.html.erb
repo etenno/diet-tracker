@@ -1,25 +1,29 @@
-<div>
+<div class="main-container">
   <div>
-    <h1>Meals index</h1>
+    <div class="header">
+      <h1>Your Meals</h1>
+    </div>
   </div>
-</div>
 
-<% num = 0 %>
+  <% num = 0 %>
 
-<div>
   <div>
-    <% num += 1 %>
-    <% @meals.each do |meal| %>
-      <ul>
-        <%= link_to meal do %>
-          <li>
-            <%=meal.name%>
-          </li>
+    <div>
+      <% num += 1 %>
+      <div class="cards">
+        <% @meals.each do |meal| %>
+            <%= link_to meal do %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+                <%=meal.name%>
+              </div>
+            <% end %>
+          </ul>
         <% end %>
-      </ul>
-    <% end %>
+      </div>
+    </div>
   </div>
-</div>
 
-<p><%= link_to "add a meal", new_meal_path %></p>
+  <div class="add-meal">
+    <p><%= link_to "Add a new meal", new_meal_path %></p>
+  </div>
 </div>
