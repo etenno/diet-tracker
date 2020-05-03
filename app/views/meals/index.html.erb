@@ -10,9 +10,13 @@
   <div>
     <% num += 1 %>
     <% @meals.each do |meal| %>
-      <%= link_to meal do %>
-        <%=meal.name%>
-      <% end %>
+      <ul>
+        <%= link_to meal do %>
+          <li>
+            <%=meal.name%>
+          </li>
+        <% end %>
+      </ul>
     <% end %>
   </div>
 </div>
