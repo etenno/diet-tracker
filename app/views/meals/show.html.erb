@@ -4,18 +4,41 @@
   </div>
 
   <div>
-    <% emission_total = 0 %>
-    <% @meal.ingredients.each do |ingredient| %>
-      <% emission_total+= Food.find(ingredient.food_id).emission_rate %>
-    <% end %>
-
     <div class="meal-rating">
-      <h4>This meal results in the emission of around</h4>
-      <h2><%= emission_total %> kg</h2>
-      <h4>of CO2 into the atmosphere</h4>
+      <h4>1 serving of this meal results in the emission of</h4>
+      <h2><%= @meal.emission_total %> kg</h2>
+      <h4>of CO2 into the atmosphere approximately</h4>
     </div>
 
-    <table>
+    <h2>annual equivalents...</h2>
+
+    <table class="travel-equivalents">
+      <tr>
+        <th><p>Frequency</p></th>
+        <th><p>Car</p></th>
+        <th><p>Train</p></th>
+        <th><p>Domestic Flight</p></th>
+        <th><p>Sh. Haul Flight</p></th>
+        <th><p>L. Haul Flight</p></th>
+      </tr>
+      <% i=0 %>
+      <% frequencies = ["1/month", "1/week", "3/week", "1/day", "every meal"] %>
+      <% [12, 52, 156, 365, 1095].each do |frequency| %>
+        <tr>
+          <td><p><%= frequencies[i] %></p></td>
+          <td><p><%= (@car_km * frequency).to_i %></p></td>
+          <td><p><%= (@train_km * frequency).to_i %></p></td>
+          <td><p><%= (@domestic_flight_km * frequency).to_i %></p></td>
+          <td><p><%= (@short_flight_km * frequency).to_i %></p></td>
+          <td><p><%= (@long_flight_km * frequency).to_i %></p></td>
+        </tr>
+      <% i+=1 %>
+      <% end %>
+    </table>
+
+    <h2>by ingredient...</h2>
+
+    <table class="">
       <tr>
         <th><p>Ingredient</p></th>
         <th><p>Description</p></th>

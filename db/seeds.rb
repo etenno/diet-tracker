@@ -8,27 +8,28 @@
 
 Meal.destroy_all
 Food.destroy_all
+Ingredient.destroy_all
 
-Food.create(name: 'Lamb', emission_rate: '39.2', average_portion_size: "0.3")
-Food.create(name: 'Beef', emission_rate: '27', average_portion_size: "0.3")
-Food.create(name: 'Cheese', emission_rate: '13.5', average_portion_size: "0.3")
-Food.create(name: 'Pork', emission_rate: '12.1', average_portion_size: "0.3")
-Food.create(name: 'Farmed Salmon', emission_rate: '11.9', average_portion_size: "0.3")
-Food.create(name: 'Turkey', emission_rate: '10.9', average_portion_size: "0.3")
-Food.create(name: 'Chicken', emission_rate: '6.9', average_portion_size: "0.3")
-Food.create(name: 'Canned Tuna', emission_rate: '6.1', average_portion_size: "0.3")
-Food.create(name: 'Eggs', emission_rate: '4.8', average_portion_size: "0.3")
-Food.create(name: 'Potatoes', emission_rate: '2.9', average_portion_size: "0.3")
-Food.create(name: 'Rice', emission_rate: '2.7', average_portion_size: "0.3")
-Food.create(name: 'Peanut Butter', emission_rate: '2.5', average_portion_size: "0.3")
-Food.create(name: 'Nuts', emission_rate: '2.3', average_portion_size: "0.3")
-Food.create(name: 'Yogurt', emission_rate: '2.2', average_portion_size: "0.3")
-Food.create(name: 'Broccoli', emission_rate: '2', average_portion_size: "0.3")
-Food.create(name: 'Tofu', emission_rate: '2', average_portion_size: "0.3")
-Food.create(name: 'Dry Beans', emission_rate: '2', average_portion_size: "0.3")
-Food.create(name: 'Milk (2%)', emission_rate: '1.9', average_portion_size: "0.3")
-Food.create(name: 'Tomatoes', emission_rate: '1.1', average_portion_size: "0.3")
-Food.create(name: 'Lentils', emission_rate: '0.9', average_portion_size: "0.3")
+Food.create(name: 'Lamb', emission_rate: 39.2, average_portion_size: 0.3)
+Food.create(name: 'Beef', emission_rate: 27, average_portion_size: 0.3)
+Food.create(name: 'Cheese', emission_rate: 13.5, average_portion_size: 0.3)
+Food.create(name: 'Pork', emission_rate: 12.1, average_portion_size: 0.3)
+Food.create(name: 'FSalmon', emission_rate: 11.9, average_portion_size: 0.3)
+Food.create(name: 'Turkey', emission_rate: 10.9, average_portion_size: 0.3)
+Food.create(name: 'Chicken', emission_rate: 6.9, average_portion_size: 0.3)
+Food.create(name: 'Can Tuna', emission_rate: 6.1, average_portion_size: 0.3)
+Food.create(name: 'Eggs', emission_rate: 4.8, average_portion_size: 0.3)
+Food.create(name: 'Potatoes', emission_rate: 2.9, average_portion_size: 0.3)
+Food.create(name: 'Rice', emission_rate: 2.7, average_portion_size: 0.3)
+Food.create(name: 'P Butter', emission_rate: 2.5, average_portion_size: 0.3)
+Food.create(name: 'Nuts', emission_rate: 2.3, average_portion_size: 0.3)
+Food.create(name: 'Yogurt', emission_rate: 2.2, average_portion_size: 0.3)
+Food.create(name: 'Broccoli', emission_rate: 2, average_portion_size: 0.3)
+Food.create(name: 'Tofu', emission_rate: 2, average_portion_size: 0.3)
+Food.create(name: 'Dry Beans', emission_rate: 2, average_portion_size: 0.3)
+Food.create(name: 'Milk(2%)', emission_rate: 1.9, average_portion_size: 0.3)
+Food.create(name: 'Tomatoes', emission_rate: 1.1, average_portion_size: 0.3)
+Food.create(name: 'Lentils', emission_rate: 0.9, average_portion_size: 0.3)
 
 # emissions for food model represents the kg of co2 released by 1 kg of food
 
