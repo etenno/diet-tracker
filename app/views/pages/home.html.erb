@@ -1,0 +1,35 @@
+<div class="main-container">
+  <div>
+    <div class="header">
+      <h1>DietTracker</h1>
+    </div>
+  </div>
+
+
+  <div class="intro-form">
+
+    <div class="intro-description">
+      <h1><b> Welcome to DietTracker.</b></h1>
+      <br>
+      <h3>Track how your diet affects your carbon footprint with DietTracker!</h3>
+      <br>
+      <h4>One of the largest contributors to peoples individual carbon footprints is their diet. DietTracker helps you understand your diet's affect on the planet through tailored emission statistics and meal ratings.</h4>
+      <br>
+      <h4><b>Get started by choosing a food and how much you eat it!</b></h4>
+    </div>
+
+    <div class="quick-form">
+      <h1>Quick-Rate</h1>
+      <%= simple_form_for :diet, url: pages_results_path, method: "GET" do |f| %>
+        <div class="p-3">
+          <div class="home-form">
+            <%= f.input :food, collection: ["Beef", "Lamb", "Cheese", "Farmed Salmon", "Turkey", "Chicken", "Canned Tuna", "Eggs", "Potatoes", "Rice", "Peanut Butter", "Nuts", "Yogurt", "Broccoli", "Tofu", "Dry Beans", "Milk (2%)", "Tomatoes", "Lentils"] %><%= f.input :amount, collection: [["Once a month", 12], ["Once a week", 52], ["3 times a week", 156], ["Once a day", 365], ["Every meal", 1095]] %>
+          <!-- :amount tracks the amount of times the specific food is eaten in a year -->
+          </div>
+        <%= f.button :submit, "Search", class: "btn btn-dark btn-search" %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
