@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+
+.intro-form {
+  display: flex;
+}
+
+.intro-description {
+  width: 50%;
+  padding: 15px;
+  margin-right: 10px;
+}
+
+.quick-form {
+  width: 50%;
+  background-color: #9DC3C2;
+  padding: 15px;
+  border-radius: 10px;
+}

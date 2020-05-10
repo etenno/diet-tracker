@@ -1,0 +1,49 @@
+<div class="main-container">
+  <div>
+    <div class="header">
+      <h1>DietTracker</h1>
+    </div>
+  </div>
+
+
+  <div class="intro-form">
+
+    <div class="intro-description">
+      <h1><b> Welcome to DietTracker.</b></h1>
+      <br>
+      <h3>Track how your diet affects your carbon footprint with DietTracker!</h3>
+      <br>
+      <h4>One of the largest contributors to peoples individual carbon footprints is their diet. DietTracker helps you understand your diet's affect on the planet through tailored emission statistics and meal ratings.</h4>
+      <br>
+      <h4><b>Get started by choosing a food and how much you eat it!</b></h4>
+    </div>
+    <div class="quick-form">
+      <div class="results-container">
+        <% if params["diet"]["amount"] = 12 %>
+          <% amount = "once a month" %>
+        <% elsif params["diet"]["amount"] = 52 %>
+          <% amount = "once a week" %>
+        <% elsif params["diet"]["amount"] = 156 %>
+          <% amount = "3 times a week" %>
+        <% elsif params["diet"]["amount"] = 365 %>
+          <% amount = "in every meal" %>
+        <% end %>
+        <h1>Quick-Rate</h1>
+        <br>
+        <h3>Eating <%= @food.name %> <%= params["diet"]["amount"] %> <%= amount %> leads to</h3>
+        <h1 class="m-3"><b><%= @one_year_emissions.floor %>kg</b></h1>
+        <h4>of CO2 per year. This is similar to travelling ... </h4>
+        <div class="travel-figures mt-4">
+          <div class="m-4">
+            <h4><b><%= @car_km.floor %>km</b> by car</h4>
+            <h4><b><%= @train_km.floor %>km</b> by train</h4>
+            <h4><b><%= @domestic_flight_km.floor %>km</b> on a domestic flight</h4>
+            <h4><b><%= @short_flight_km.floor %>km</b> by short haul flight</h4>
+            <h4><b><%= @long_flight_km.floor %>km</b> by long haul flight</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
