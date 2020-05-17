@@ -19,7 +19,12 @@
     </div>
     <div class="quick-form">
       <div class="results-container">
-        <h1>Quick-Rate</h1>
+        <div class="front-form-header">
+          <h1>Quick-Rate</h1>
+          <%= simple_form_for :diet, url: root_path, method: "GET" do |f| %>
+            <%= f.button :submit, "Reset", class: "btn btn-dark btn-reset" %>
+          <% end %>
+        </div>
         <br>
         <h3>Eating <%= @food.name.downcase %> <%= @amount %> leads to</h3>
         <h1 class="m-3"><b><%= @one_year_emissions.floor %>kg</b></h1>

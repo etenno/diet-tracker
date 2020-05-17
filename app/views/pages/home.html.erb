@@ -7,7 +7,6 @@
 
 
   <div class="intro-form">
-
     <div class="intro-description">
       <h1><b> Welcome to DietTracker.</b></h1>
       <br>
@@ -15,22 +14,29 @@
       <br>
       <h4>One of the largest contributors to peoples individual carbon footprints is their diet. DietTracker helps you understand your diet's affect on the planet through tailored emission statistics and meal ratings.</h4>
       <br>
-      <h4><b>Get started by choosing a food and how much you eat it!</b></h4>
+      <h4><b>Choose an ingredient, how often you eat it and rate!</b></h4>
+      <br>
+      <h4>You can store the meals you eat by ingredient and then DietTracker will provide a rating on how environmentally friendly it is! Or you can get started with a Quick-rate to the right. Choose an ingredient, how often you eat it and rate!</h4>
     </div>
 
-    <div class="quick-form">
-      <h1>Quick-Rate</h1>
-      <%= simple_form_for :diet, url: pages_results_path, method: "GET" do |f| %>
-        <div class="p-3">
-          <div class="home-form">
-            <%= f.input :food, collection: ["Beef", "Lamb", "Cheese", "Farmed Salmon", "Turkey", "Chicken", "Canned Tuna", "Eggs", "Potatoes", "Rice", "Peanut Butter", "Nuts", "Yogurt", "Broccoli", "Tofu", "Dry Beans", "Milk (2%)", "Tomatoes", "Lentils"] %>
-            <%= f.input :amount, collection: [["Once a month", 12], ["Once a week", 52], ["3 times a week", 156], ["Once a day", 365], ["Every meal", 1095]] %>
-          <!-- :amount tracks the amount of times the specific food is eaten in a year -->
+    <div class="button-form-container">
+      <div class="quick-form">
+        <h1>Quick-Rate</h1>
+        <%= simple_form_for :diet, url: pages_results_path, method: "GET" do |f| %>
+          <div class="p-3">
+            <div class="home-form">
+              <%= f.input :food, collection: ["Beef", "Lamb", "Cheese", "Farmed Salmon", "Turkey", "Chicken", "Canned Tuna", "Eggs", "Potatoes", "Rice", "Peanut Butter", "Nuts", "Yogurt", "Broccoli", "Tofu", "Dry Beans", "Milk (2%)", "Tomatoes", "Lentils"] %>
+              <%= f.input :amount, collection: [["Once a month", 12], ["Once a week", 52], ["3 times a week", 156], ["Once a day", 365], ["Every meal", 1095]] %>
+            <!-- :amount tracks the amount of times the specific food is eaten in a year -->
+            </div>
+          <%= f.button :submit, "Search", class: "btn btn-dark btn-search" %>
           </div>
-        <%= f.button :submit, "Search", class: "btn btn-dark btn-search" %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+      <div class="front-buttons">
+        <%= link_to "Your meals", "#", class: "btn btn-flat" %>
+        <%= link_to "Info", "#", class: "btn btn-flat" %>
+      </div>
     </div>
-
   </div>
 </div>
