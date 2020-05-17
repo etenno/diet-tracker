@@ -23,7 +23,8 @@
       <%= simple_form_for :diet, url: pages_results_path, method: "GET" do |f| %>
         <div class="p-3">
           <div class="home-form">
-            <%= f.input :food, collection: ["Beef", "Lamb", "Cheese", "Farmed Salmon", "Turkey", "Chicken", "Canned Tuna", "Eggs", "Potatoes", "Rice", "Peanut Butter", "Nuts", "Yogurt", "Broccoli", "Tofu", "Dry Beans", "Milk (2%)", "Tomatoes", "Lentils"] %><%= f.input :amount, collection: [["Once a month", 12], ["Once a week", 52], ["3 times a week", 156], ["Once a day", 365], ["Every meal", 1095]] %>
+            <%= f.input :food, collection: ["Beef", "Lamb", "Cheese", "Farmed Salmon", "Turkey", "Chicken", "Canned Tuna", "Eggs", "Potatoes", "Rice", "Peanut Butter", "Nuts", "Yogurt", "Broccoli", "Tofu", "Dry Beans", "Milk (2%)", "Tomatoes", "Lentils"] %>
+            <%= f.input :amount, collection: [["Once a month", 12], ["Once a week", 52], ["3 times a week", 156], ["Once a day", 365], ["Every meal", 1095]] %>
           <!-- :amount tracks the amount of times the specific food is eaten in a year -->
           </div>
         <%= f.button :submit, "Search", class: "btn btn-dark btn-search" %>

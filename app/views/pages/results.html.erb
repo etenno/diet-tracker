@@ -19,18 +19,9 @@
     </div>
     <div class="quick-form">
       <div class="results-container">
-        <% if params["diet"]["amount"] = 12 %>
-          <% amount = "once a month" %>
-        <% elsif params["diet"]["amount"] = 52 %>
-          <% amount = "once a week" %>
-        <% elsif params["diet"]["amount"] = 156 %>
-          <% amount = "3 times a week" %>
-        <% elsif params["diet"]["amount"] = 365 %>
-          <% amount = "in every meal" %>
-        <% end %>
         <h1>Quick-Rate</h1>
         <br>
-        <h3>Eating <%= @food.name %> <%= params["diet"]["amount"] %> <%= amount %> leads to</h3>
+        <h3>Eating <%= @food.name.downcase %> <%= @amount %> leads to</h3>
         <h1 class="m-3"><b><%= @one_year_emissions.floor %>kg</b></h1>
         <h4>of CO2 per year. This is similar to travelling ... </h4>
         <div class="travel-figures mt-4">
